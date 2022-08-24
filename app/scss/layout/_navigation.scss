@@ -1,0 +1,56 @@
+//
+// Common
+//------------------------------------------
+
+.nav {
+    margin-right: auto;
+}
+
+.nav-items {
+    @include absolute($header-height, 0, 0, -500px);
+    @include transition;
+    z-index: 2;
+    &.is_open {
+
+        left: 0;
+
+        .nav-list {
+            box-shadow: $box-shadow; 
+            display: block;}
+    }
+}
+
+.nav-list {
+    background-color: $color-white;
+    display: none;
+
+    .nav-item {
+        padding: $indent-base $indent-micro ;
+        @include transition;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+}
+
+//
+// Desktop < 992px
+//------------------------------------------
+
+@media only screen and (min-width: $screen-laptop) {
+
+    .nav-items {
+        position: initial;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .nav-list {
+        box-shadow: none;
+        @include flex();
+    
+    }
+}

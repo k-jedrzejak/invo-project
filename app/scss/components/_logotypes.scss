@@ -1,0 +1,30 @@
+//
+// Common
+//------------------------------------------
+
+.logotypes {
+    @extend .wrapper-inner;
+    @include flex();
+    overflow: auto;
+    padding: $indent-small 0;
+
+    .logotype {
+        margin: 0 $indent-big;
+        width: calc(100/3);
+    }
+}
+
+
+//
+// Desktop < 798px
+//------------------------------------------
+
+@media only screen and (min-width: $screen-tablet) {
+
+.logotypes {
+
+    .logotype {
+        margin: auto;
+        width: auto;
+    }
+}}

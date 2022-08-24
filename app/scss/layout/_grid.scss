@@ -1,0 +1,16 @@
+
+//
+// Common
+//------------------------------------------
+
+.container {
+    padding: 0 $layout-padding;
+}
+
+.wrapper-inner {
+    max-width: $max_wrapper-width;
+    @include size(100%, 100%);
+    margin: 0 auto;
+    padding: 0 $layout-padding;
+    box-sizing: border-box;
+}

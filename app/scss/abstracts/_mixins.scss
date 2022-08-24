@@ -1,0 +1,73 @@
+//
+// Flex mixin
+//------------------------------------------
+
+@mixin flex($align: center, $justify: null) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: $align;
+    -webkit-align-items: $align;
+    -moz-box-align: $align;
+    -ms-flex-align: $align;
+    align-items: $align;
+    -webkit-justify-content: $justify;
+    -moz-box-pack: $justify;
+    -ms-flex-pack: $justify;
+    justify-content: $justify;
+  }
+
+//
+// Flex direct mixin
+//------------------------------------------
+
+  @mixin flex-direct($direct: column) {
+    -webkit-box-orient: $direct;
+    -webkit-box-direction: $direct;
+    -ms-flex-direction: $direct;
+    flex-direction: $direct;
+  }
+  
+
+//
+// Transition mixin
+//------------------------------------------
+
+  @mixin transition($delay: 0.2s) {
+    transition: $delay linear;
+    -webkit-transition: $delay linear;
+    -o-transition: $delay linear;
+  }
+
+
+//
+// Position mixin
+//------------------------------------------
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
+  
+  @mixin absolute($args...) {
+    @include position(absolute, $args...);
+  }
+  
+  @mixin relative($args...) {
+    @include position(relative, $args...);
+  }
+
+
+//
+// Size mixin
+//------------------------------------------
+
+  @mixin size($width: auto, $height: null) {
+    width: $width;
+    height: $height;
+  }

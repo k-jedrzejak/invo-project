@@ -1,0 +1,82 @@
+//
+// Common
+//------------------------------------------
+
+.header-links {
+    @include flex();
+}
+
+.header-link {
+    @include flex(center, baseline);
+    @include flex-direct();
+    @include transition;
+
+    &.order {
+        @extend .button-red;
+        padding: $indent-micro $indent-regular;
+
+        .header-link-label {
+            display: block;
+        }
+
+        &:hover {
+            color: $color-main;
+
+            svg {
+                path {
+                    stroke: $color-main;
+                    fill: none;
+                }
+            }
+        }
+    }
+
+    &-label {
+        display: none;
+    }
+
+    &-item {
+
+        &:not(:last-child) {
+            margin-right: $indent-micro;
+        }
+    }
+
+    &:hover {
+        color: $color-main;
+
+        svg {
+            path {
+                fill: $color-main;
+            }
+        }
+    }
+
+}
+
+//
+// Desktop < 798px
+//------------------------------------------
+
+@media only screen and (min-width: $screen-tablet) {
+    .header-link {
+        @include flex(center, baseline);
+        @include flex-direct();
+        @include transition;
+
+        &-item {
+
+            &:not(:last-child) {
+                margin-right: $indent-big;
+            }
+        }
+
+        &-label {
+            display: block;
+        }
+
+        &-icon {
+            margin-bottom: $indent-base;
+        }
+    }
+}

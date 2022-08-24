@@ -1,0 +1,107 @@
+//
+// Variables
+//------------------------------------------
+
+$wiper-width: 1400px;
+
+//
+// Common
+//------------------------------------------
+
+.my-swiper {
+    @include size(100%,100%);
+    box-sizing: border-box;
+    padding: 0 $indent-tiny;
+
+    .swiper-slide {
+        background: $color-white;
+
+        &:hover {
+            .button-red {
+                color: $color-main;
+                border: 1px solid $color-main;
+                background: $color-white;
+            }
+        }
+
+        .slide {
+
+            &-img {
+                display: none;
+                object-fit: cover;
+            }
+
+            &-text {
+                padding: 0 $indent-micro;
+                margin-bottom: $indent-big;
+            }
+
+        }
+    }
+
+    .my-swiper-pagination {
+        left: initial;
+
+        .swiper-pagination-bullet {
+            background: $color-gray;
+            opacity: 1;
+            margin: 0 $indent-small 0 0;
+
+            &-active {
+                box-sizing: border-box;
+                background: white;
+                border: 2px solid $color-black;
+            }
+        }
+    }
+}
+
+//
+// Desktop < 798px
+//------------------------------------------
+
+@media only screen and (min-width: $screen-tablet) {
+
+    .my-swiper {
+        margin-left: $indent-huge;
+        max-width: $wiper-width;
+        width: 100%;
+        padding: 0 0 0 $indent-regular;
+
+        margin-right: 0;
+        margin-left: auto;
+
+        .swiper-slide {
+            background: $color-white;
+
+            .slide {
+                &-column {
+                    flex: 0 1 50%;
+                }
+
+                &-title {
+                    width: 90%;
+                }
+
+                &-subtitle {
+                    width: 55%;
+                }
+
+                &-link {
+                    @include flex(stretch);
+
+                }
+                &-img {
+                    display: block;
+                    @include size(100%,100%);
+                }
+                &-text {
+                    padding: 0;
+                }
+            }
+        }
+        .my-swiper-pagination {
+            text-align: left;
+        }
+    }
+}

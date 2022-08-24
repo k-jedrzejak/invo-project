@@ -1,0 +1,32 @@
+//
+// Variables
+//------------------------------------------
+
+$border-radius: 10px;
+$btn-width: 210px;
+
+//
+// Common
+//------------------------------------------
+
+.button {
+
+    min-width: $btn-width;
+    padding: $indent-micro;
+    cursor: pointer;
+    border: none;
+    @include transition;
+
+    &-red {
+        background-color: $color-main;
+        border-radius: $border-radius;
+        color: $color-white;
+        border: 1px solid $color-main;
+
+        &:hover {
+            color: $color-main;
+            background-color: $color-white;
+            border: 1px solid $color-main;
+        }
+    }
+}

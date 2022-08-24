@@ -1,0 +1,55 @@
+//
+// Common
+//------------------------------------------
+
+.burger {
+    @include size(30px, 30px);
+    display: inline-block;
+    z-index: 1;
+    cursor: pointer;
+    margin: 0 $indent-micro;
+
+    &-part {
+        display: block;
+        @include size(30px, 2px);
+        background: $color-main;
+        @include transition();
+
+        &:nth-child(1) {
+            @include relative(8px);
+        }
+
+        &:nth-child(2) {
+            @include relative(16px);
+        }
+
+        &:nth-child(3) {
+            @include relative(24px);
+        }
+    }
+}
+
+.is_active {
+
+    .burger {
+
+        &-part {
+
+            &:nth-child(1) {
+                @include relative(18px);
+                -webkit-transform: rotateZ(45deg);
+                transform: rotateZ(45deg);
+            }
+
+            &:nth-child(2) {
+                background: transparent;
+            }
+
+            &:nth-child(3) {
+                @include relative(15px);
+                -webkit-transform: rotateZ(-45deg);
+                transform: rotateZ(-45deg);
+            }
+        }
+    }
+}

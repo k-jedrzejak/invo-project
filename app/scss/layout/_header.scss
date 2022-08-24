@@ -1,0 +1,30 @@
+
+//
+// Common
+//------------------------------------------
+
+#header {
+
+    @include relative();
+    height: $header-height;
+    box-shadow: $box-shadow;
+    font-size: $font-normal;
+
+    .wrapper-inner {
+        @include flex();
+    }
+}
+
+//
+// Desktop < 798px
+//------------------------------------------
+
+@media only screen and (min-width: $screen-tablet) {
+
+    #header {
+
+        .logo-container {
+            margin-right: $indent-huge;
+        }
+    }
+}

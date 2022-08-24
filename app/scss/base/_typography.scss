@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Sofia Pro';
+    src: url("../fonts/Sofia_Pro_Medium.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Sofia Pro';
+    src: url("../fonts/Sofia_Pro_Light.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Sofia Pro';
+    src: url("../fonts/Sofia_Pro_Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+body {
+    font-family: $family-base;
+}
+
+h2 {
+    font-size: $font-slider;
+    margin-bottom: $indent-regular;
+}
+
+ul {
+    font-size: $font-normal;
+    line-height: 32px;
+}
+
+.paragraph {
+    font-weight: 100;
+    font-size: $font-regular;
+    line-height: 32px;
+    margin-bottom: $indent-medium;
+}

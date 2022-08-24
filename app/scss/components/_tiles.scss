@@ -1,0 +1,139 @@
+//
+// Variables
+//------------------------------------------
+
+$column-qty: 2;
+$tile-padding: 80px;
+$border-radius: 7px;
+$box-shadow: 0 0 20px $color-black;
+$subtitle-height: 95px;
+
+//
+// Common
+//------------------------------------------
+
+.tiles {
+    padding: 0;
+
+    .tile {
+        margin: 0 0 $indent-tiny;
+        padding: $tile-padding $indent-medium;
+        background-size: cover;
+        background-position: center;
+        border-radius: $border-radius;
+        color: $color-white;
+        @include transition();
+
+        &:hover {
+            box-shadow: $box-shadow;
+
+        }
+
+        &-title {
+            font-size: $font-bigger;
+            line-height: 35px;
+            margin-bottom: $indent-medium;
+            font-weight: bold;
+        }
+
+        &-link {
+            @include relative;
+            @include size(100%, 100%);
+            display: inline-block;
+
+        }
+
+        &-text {
+            @include size(80%);
+        }
+
+        &-subtitle {
+            min-height: $subtitle-height;
+        }
+
+        &-icons {
+            @include flex(flex-start);
+            margin: $indent-base 0;
+
+        }
+        &-icon {
+            margin-right: $indent-base;
+        }
+    }
+
+}
+//
+// Mobile < 576px
+//------------------------------------------
+
+@media only screen and (min-width: $screen-mobile) {
+
+    .tiles {
+        .tile {
+
+            &-text {
+                @include size(60%);
+            }
+        }
+    }
+}
+
+//
+// Desktop < 992px
+//------------------------------------------
+
+@media only screen and (min-width: $screen-laptop) {
+
+    .tiles {
+        @include flex(stretch);
+
+        .tile {
+            margin: 0 $indent-tiny $indent-tiny;
+            @include size(calc(100%/2));
+
+            &-title {
+                font-size: $font-bigger;
+                line-height: 35px;
+                margin-bottom: $indent-medium;
+                font-weight: bold;
+            }
+
+            &-link {
+                @include relative;
+                @include size(100%, 100%);
+                display: inline-block;
+
+            }
+
+            &-text {
+                @include size(50%);
+            }
+
+            &-subtitle {
+                min-height: $subtitle-height;
+            }
+
+            .highlight {
+                padding: $indent-base;
+
+                &-dark {
+                    background-color: $color-black;
+                }
+
+                &-red {
+                    background-color: $color-main;
+                }
+            }
+
+            &-icons {
+                @include flex(flex-start);
+                margin: $indent-base 0;
+
+            }
+            &-icon {
+                margin-right: $indent-base;
+            }
+        }
+
+    }
+}
