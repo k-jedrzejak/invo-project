@@ -14,7 +14,8 @@ a {
 
     &:visited,
     &:active,
-    &:hover {
+    &:hover,
+    &:focus {
         color: inherit;
     }
 }
